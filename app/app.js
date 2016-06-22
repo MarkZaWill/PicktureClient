@@ -2,7 +2,7 @@
 
 /* exported Pickture */
 
-let Pickture = angular.module("Pickture", ["ngRoute"]);
+let Pickture = angular.module("Pickture", ["ngRoute", "chart.js"]);
 
 
 

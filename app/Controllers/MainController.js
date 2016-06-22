@@ -4,12 +4,13 @@ Pickture.controller('MainController', [
 	'$http', 
 	'$scope',
 	'$location',
-	// 'chart.js',
+	'chart.js',
+
 
 	function ($http, $scope, $location) {
 
 		$scope.images = [];
-
+		
 		$http
 			.get("http://localhost:57677/api/image")	
 			.success(
@@ -17,7 +18,7 @@ Pickture.controller('MainController', [
 					$scope.images = img;
 				})
 
-		function ($scope) {
+		$scope.addChart = function($scope, chart.js) {
 		  $scope.labels = ["Download Sales", "In-Store Sales", "Mail-Order Sales"];
  		 $scope.data = [300, 500, 100];
 		}
