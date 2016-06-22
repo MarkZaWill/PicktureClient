@@ -4,7 +4,7 @@ Pickture.controller('MainController', [
 	'$http', 
 	'$scope',
 	'$location',
-	'chart.js',
+
 
 
 	function ($http, $scope, $location) {
@@ -18,9 +18,9 @@ Pickture.controller('MainController', [
 					$scope.images = img;
 				})
 
-		$scope.addChart = function($scope, chart.js) {
-		  $scope.labels = ["Download Sales", "In-Store Sales", "Mail-Order Sales"];
- 		 $scope.data = [300, 500, 100];
+		$scope.addChart = function() {
+		  $scope.labels = ["Anger", "Contempt", "Happiness", "Neutral", "Fear", "Sadness", "Surprise", "Disgust"];
+ 		 $scope.data = [img.Anger, img.Contempt, img.Happiness, img.Neutral, img.Fear, img.Sadness, img.Surprise, img.Disgust];
 		}
 
 		$scope.deleteImage = function (id) {
