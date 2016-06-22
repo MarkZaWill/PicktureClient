@@ -1,0 +1,40 @@
+
+
+<div class="jumbotron">
+  <h1>Pickture</h1>
+  <p>When navigating the wild world of social media, Pickture can help to tailor your image to friends, family, and potential employers through an understanding of the emotions conveyed in your photo.</p>
+ 
+</div>
+
+
+
+<h1>Current Pictures</h1>
+<div ng-repeat="img in images">
+	<div>
+	  <img src={{img.ImageURL}}>
+	  <div>Anger {{makePercentageFromDecimal(img.Anger)}}%</div>
+	  <div>Contempt {{makePercentageFromDecimal(img.Contempt)}}%</div>
+      <div>Fear {{makePercentageFromDecimal(img.Fear)}}%</div>
+      <div>Happiness {{makePercentageFromDecimal(img.Happiness)}}%</div>
+      <div>Neutral {{makePercentageFromDecimal(img.Neutral)}}%</div>
+      <div>Sadness {{makePercentageFromDecimal(img.Sadness)}}%</div>
+      <div>Surprise {{makePercentageFromDecimal(img.Surprise)}}%</div>
+      <div>Disgust {{makePercentageFromDecimal(img.Disgust)}}%</div>
+		
+		<button 
+			ng-click="deleteImage(Image.ImageId)">Delete</button>
+	</div>
+<!-- <div ng-controller = "emotionController">	
+<div ng-repeat="emos in emotions">
+	<div>{{emos.Contempt}}</div>
+	<div>{{emos.Fear}}</div>
+	<div>{{emos.Happiness}}</div>
+	<div>{{emos.Neutral}}</div>
+	<div>{{emos.Sadness}}</div>
+	<div>{{emos.Surprise}}</div>
+	<div>{{emos.Disgust}}</div>
+</div> -->
+</div>
+
+</div>	
+</div>
