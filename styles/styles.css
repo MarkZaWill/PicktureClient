@@ -1,3 +1,18 @@
 .jumbotron {
-	background-image: ;
+	background: url(https://static.pexels.com/photos/1191/camera-photography-vintage-lens.jpg) center no-repeat;
+	background-size: cover; 
+
 }
+
+.jumbotron p{
+	background-color: rgba(0, 0,0, .7);
+	padding: 20px;
+}
+
+.picture-size {
+
+  max-width: 30em;
+  max-height: 30em;
+
+}
+ 

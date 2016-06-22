@@ -3,9 +3,10 @@
 Pickture.controller('addController', [
 	'$http', 
 	'$scope',
+    '$location',
 
 
-function($http, $scope){
+function($http, $scope, $location){
 	 $scope.Image = {
      ImageURL: "",
       
@@ -56,8 +57,8 @@ function($http, $scope){
       // The $http.post() method returns a promise, so you can use then()
       )
       .then(
-        // () => $location.url("/image"),      // Handle resolve
-        (response) => console.log(response)  // Handle reject
+        () => $location.path("/main")      // Handle resolve
+        // (response) => console.log(response)  // Handle reject
       );
     };
     }

@@ -3,8 +3,10 @@
 Pickture.controller('MainController', [
 	'$http', 
 	'$scope',
+	'$location',
+	// 'chart.js',
 
-	function ($http, $scope) {
+	function ($http, $scope, $location) {
 
 		$scope.images = [];
 
@@ -15,17 +17,25 @@ Pickture.controller('MainController', [
 					$scope.images = img;
 				})
 
-
+		function ($scope) {
+		  $scope.labels = ["Download Sales", "In-Store Sales", "Mail-Order Sales"];
+ 		 $scope.data = [300, 500, 100];
+		}
 
 		$scope.deleteImage = function (id) {
+			console.log(id)
 			$http({
 				method: "DELETE",
-				url: `http://localhost:5000/api/Image/${id}`
+				url: `http://localhost:57677/api/Image/${id}`
 			})
 			.then(
 				() => console.log("Image deleted"),
 				() => console.log("Image not deleted")
-			);
+			)
+			.then(
+				() => $location.url()
+				);
+
 		}
 
 		$scope.makePercentageFromDecimal = function(decimal){
