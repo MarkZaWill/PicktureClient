@@ -16,12 +16,15 @@ Pickture.controller('MainController', [
 			.success(
 				function(img){
 					$scope.images = img;
+					console.log($scope.images[0].Anger, "Anger")
+					 $scope.labels = ["Anger", "Contempt", "Happiness", "Neutral", "Fear", "Sadness", "Surprise", "Disgust"];
+ 		 $scope.data = [$scope.images[0].Anger, $scope.images[0].Contempt, $scope.images[0].Happiness, $scope.images[0].Neutral, $scope.images[0].Fear, $scope.images[0].Sadness, $scope.images[0].Surprise, $scope.images[0].Disgust];
 				})
 
-		$scope.addChart = function() {
-		  $scope.labels = ["Anger", "Contempt", "Happiness", "Neutral", "Fear", "Sadness", "Surprise", "Disgust"];
- 		 $scope.data = [img.Anger, img.Contempt, img.Happiness, img.Neutral, img.Fear, img.Sadness, img.Surprise, img.Disgust];
-		}
+		// $scope.addChart = function($scope.images) {
+		//   $scope.labels = ["Anger", "Contempt", "Happiness", "Neutral", "Fear", "Sadness", "Surprise", "Disgust"];
+ 	// 	 $scope.data = [$scope.images.Anger, $scope.images.Contempt, $scope.images.Happiness, $scope.images.Neutral, $scope.images.Fear, $scope.images.Sadness, $scope.images.Surprise, $scope.images.Disgust];
+		// }
 
 		$scope.deleteImage = function (id) {
 			console.log(id)
