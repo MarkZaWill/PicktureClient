@@ -10,15 +10,17 @@
 
 
 <h1>Current Pictures</h1>
-<div ng-repeat="img in images">
+<div ng-repeat="img in images track by $index">
 <div class="panel panel-default">
   <div class="panel-body">
     <div class="picture-size"> <img class="picture-size" src={{img.ImageURL}}> </div>
-	  <div class="pull-right">
-	  <canvas id="doughnut" class="chart chart-doughnut"
- 		 chart-data="data" chart-labels="labels">
+    <div><canvas id="doughnut" class="chart chart-doughnut"
+ 		 chart-data="data[$index]" chart-labels="labels">
 	  </canvas> 
+	  </div>
+	  <div class="pull-right">
 	  
+
 	  <div>Anger {{makePercentageFromDecimal(img.Anger)}}%</div>
 	  <div>Contempt {{makePercentageFromDecimal(img.Contempt)}}%</div>
       <div>Fear {{makePercentageFromDecimal(img.Fear)}}%</div>

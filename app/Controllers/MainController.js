@@ -10,16 +10,21 @@ Pickture.controller('MainController', [
 	function ($http, $scope, $location) {
 
 		$scope.images = [];
-		
+		$scope.data = [];
+		var tempArr = [];
 		$http
 			.get("http://localhost:57677/api/image")	
 			.success(
 				function(img){
 					$scope.images = img;
-					console.log($scope.images[0].Anger, "Anger")
+					console.log($scope.data)
+					for (var i = $scope.images.length - 1; i >= 0; i--) {
 					 $scope.labels = ["Anger", "Contempt", "Happiness", "Neutral", "Fear", "Sadness", "Surprise", "Disgust"];
- 		 $scope.data = [$scope.images[0].Anger, $scope.images[0].Contempt, $scope.images[0].Happiness, $scope.images[0].Neutral, $scope.images[0].Fear, $scope.images[0].Sadness, $scope.images[0].Surprise, $scope.images[0].Disgust];
-				})
+ 		 tempArr.push([$scope.images[i].Anger, $scope.images[i].Contempt, $scope.images[i].Happiness, $scope.images[i].Neutral, $scope.images[i].Fear, $scope.images[i].Sadness, $scope.images[i].Surprise, $scope.images[i].Disgust]);
+				}
+				$scope.data.push(tempArr);
+				console.log(tempArr, "tempArr")
+			})
 
 		// $scope.addChart = function($scope.images) {
 		//   $scope.labels = ["Anger", "Contempt", "Happiness", "Neutral", "Fear", "Sadness", "Surprise", "Disgust"];
