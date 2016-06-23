@@ -18,12 +18,11 @@ Pickture.controller('MainController', [
 				function(img){
 					$scope.images = img;
 					console.log($scope.data)
-					for (var i = $scope.images.length - 1; i >= 0; i--) {
+					for (var i = 0; i <=  $scope.images.length - 1; i++) {
 					 $scope.labels = ["Anger", "Contempt", "Happiness", "Neutral", "Fear", "Sadness", "Surprise", "Disgust"];
- 		 tempArr.push([$scope.images[i].Anger, $scope.images[i].Contempt, $scope.images[i].Happiness, $scope.images[i].Neutral, $scope.images[i].Fear, $scope.images[i].Sadness, $scope.images[i].Surprise, $scope.images[i].Disgust]);
+ 		$scope.data.push([$scope.images[i].Anger, $scope.images[i].Contempt, $scope.images[i].Happiness, $scope.images[i].Neutral, $scope.images[i].Fear, $scope.images[i].Sadness, $scope.images[i].Surprise, $scope.images[i].Disgust]);
 				}
-				$scope.data.push(tempArr);
-				console.log(tempArr, "tempArr")
+			
 			})
 
 		// $scope.addChart = function($scope.images) {
