@@ -16,7 +16,7 @@ Pickture.controller('MainController', [
 			.get("http://localhost:57677/api/image")	
 			.success(
 				function(img){
-					$scope.images = img;
+					$scope.images = img.reverse();
 					console.log($scope.data)
 					for (var i = 0; i <=  $scope.images.length - 1; i++) {
 					 $scope.labels = ["Anger", "Contempt", "Happiness", "Neutral", "Fear", "Sadness", "Surprise", "Disgust"];
