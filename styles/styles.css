@@ -13,6 +13,30 @@
 
   max-width: 30em;
   max-height: 30em;
+  right-padding:0px;
+}
 
+.photo-size {
+	max-width: 30em;
+	max-height: 30em;
+	left-padding: 20px;
 }
  
+.deletebutton{
+	color: black;
+}
+
+.inputclass {
+	width: 500px;
+	margin-top: 20px;
+}
+
+.top {
+	float: right;
+	margin-top: 0px;
+}
+
+#hidethelink{
+	text-decoration:none;
+	color: white;
+}

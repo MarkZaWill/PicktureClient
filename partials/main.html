@@ -3,51 +3,56 @@
 <div class="jumbotron">
   <h1>Pickture</h1>
   <br/>
-  <p>When navigating the wild world of social media, Pickture can help to tailor your image to friends, family, and potential employers through an understanding of the emotions conveyed in your photo.</p>
+  <p>When navigating the <a href="https://www.youtube.com/watch?v=u6mYGcNgKn8" id="hidethelink">wild </a>world of social media, Pickture can help <a href="https://www.youtube.com/watch?v=nfWlot6h_JM" id="hidethelink">tailor</a> your image to friends, family, and potential employers through an understanding of the emotions conveyed in your photo.</p>
  
 </div>
 
 
 
 <h1>Current Pictures</h1>
-<div ng-repeat="img in images">
-<div class="panel panel-default">
-  <div class="panel-body">
-    <div class="picture-size"> <img class="picture-size" src={{img.ImageURL}}> </div>
-	  <div class="pull-right">
-	  <canvas id="doughnut" class="chart chart-doughnut"
- 		 chart-data="data" chart-labels="labels">
-	  </canvas> 
-	  
-	  <div>Anger {{makePercentageFromDecimal(img.Anger)}}%</div>
-	  <div>Contempt {{makePercentageFromDecimal(img.Contempt)}}%</div>
-      <div>Fear {{makePercentageFromDecimal(img.Fear)}}%</div>
-      <div>Happiness {{makePercentageFromDecimal(img.Happiness)}}%</div>
-      <div>Neutral {{makePercentageFromDecimal(img.Neutral)}}%</div>
-      <div>Sadness {{makePercentageFromDecimal(img.Sadness)}}%</div>
-      <div>Surprise {{makePercentageFromDecimal(img.Surprise)}}%</div>
-      <div>Disgust {{makePercentageFromDecimal(img.Disgust)}}%</div>
-      
+<div  class="container">
+	<div class="row">
 
-		<button 
-			ng-click="deleteImage(img.ImageId)">Delete</button>
-	  </div>
-  </div>
-</div>
-	<div>
-	 
+		<div ng-repeat="img in images track by $index">
+			<div class="panel panel-default">
+  				<div class="panel-body row">
+    				<div class="col-md-4"> <img class="img-responsive" src={{img.ImageURL}}> </div>
+    				<div class="col-md-8">
+    					<div class="row">
+    				<!-- <div class="pull-right"> -->
+    					<div class="col-md-10">
+    						
+    					<canvas id="doughnut" class="chart chart-doughnut"
+ 				 		chart-data="data[$index]" chart-labels="labels">
+	  					</canvas> 
+    					</div>
+						<div class="col-md-2">
+	  					<div>Anger {{makePercentageFromDecimal(img.Anger)}}%</div>
+	  					<div>Contempt {{makePercentageFromDecimal(img.Contempt)}}%</div>
+      					<div>Fear {{makePercentageFromDecimal(img.Fear)}}%</div>
+      					<div>Happiness {{makePercentageFromDecimal(img.Happiness)}}%</div>
+     					<div>Neutral {{makePercentageFromDecimal(img.Neutral)}}%</div>
+      					<div>Sadness {{makePercentageFromDecimal(img.Sadness)}}%</div>
+      					<div>Surprise {{makePercentageFromDecimal(img.Surprise)}}%</div>
+      					<div>Disgust {{makePercentageFromDecimal(img.Disgust)}}%</div>
+						<button class="deletebutton" 
+						ng-click="deleteImage(img.ImageId)">Delete</button>
+	  				<!-- </div> -->
+	  				</div>
+	  				</div>
+	  				</div>
+	  			</div>	
+	 		</div>
+	 		
+	  <!-- 
+			<div class="pull-right top"> -->
+	 			
+			<!-- </div> -->
+		</div>
 	</div>
-<!-- <div ng-controller = "emotionController">	
-<div ng-repeat="emos in emotions">
-	<div>{{emos.Contempt}}</div>
-	<div>{{emos.Fear}}</div>
-	<div>{{emos.Happiness}}</div>
-	<div>{{emos.Neutral}}</div>
-	<div>{{emos.Sadness}}</div>
-	<div>{{emos.Surprise}}</div>
-	<div>{{emos.Disgust}}</div>
-</div> -->
 </div>
 
-</div>	
-</div>
+
+
+	 
+	
