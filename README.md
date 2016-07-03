@@ -1,0 +1,1 @@
+This is the client that utilizes the Pickture API.  This includes the API call to the external API (Microsoft Cognitive Services) as well as to my API to ensure that all the data is posted to the API so we can retrieve the data.  
