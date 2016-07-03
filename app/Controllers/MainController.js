@@ -25,11 +25,6 @@ Pickture.controller('MainController', [
 			
 			})
 
-		// $scope.addChart = function($scope.images) {
-		//   $scope.labels = ["Anger", "Contempt", "Happiness", "Neutral", "Fear", "Sadness", "Surprise", "Disgust"];
- 	// 	 $scope.data = [$scope.images.Anger, $scope.images.Contempt, $scope.images.Happiness, $scope.images.Neutral, $scope.images.Fear, $scope.images.Sadness, $scope.images.Surprise, $scope.images.Disgust];
-		// }
-
 		$scope.deleteImage = function (id) {
 			console.log(id)
 			$http({
