@@ -46,19 +46,17 @@ function($http, $scope, $location){
 
 	 $scope.storeImages = function(object) {
 
-      // POST the song to Firebase
+      // POST to API
       $http
       .post("http://localhost:57677/api/image",
 
-        // Remember to stringify objects/arrays before
-        // sending them to an API
+       //stringify to send to API
         JSON.stringify(object)
 
-      // The $http.post() method returns a promise, so you can use then()
+      
       )
       .then(
-        () => $location.path("/main")      // Handle resolve
-        // (response) => console.log(response)  // Handle reject
+        () => $location.path("/main")      
       );
     };
     }
