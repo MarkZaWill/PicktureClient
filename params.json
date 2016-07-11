@@ -1,0 +1,6 @@
+{
+  "name": "Picktureclient",
+  "tagline": "",
+  "body": "This is the client that utilizes the Pickture API.  This includes the API call to the external API (Microsoft Cognitive Services) as well as to my API to ensure that all the data is posted to the API so we can retrieve the data.  \r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
